@@ -176,3 +176,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+  document.querySelectorAll('.has-dropdown .trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const parent = trigger.closest('.has-dropdown');
+      parent.classList.toggle('open');
+    });
+  });
+
