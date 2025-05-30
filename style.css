@@ -606,7 +606,7 @@ small{
 .card.red .btn {
   background: #e60000;
 }
-.card.blue .btn {
+.card.blu .btn {
   background: #007fff;
 }
 .card.orange .btn {
@@ -649,7 +649,7 @@ small{
     width: 100%;
   }
   .buttons{
-    padding: 0.2rem;
+    padding: 0.1rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
@@ -676,12 +676,11 @@ small{
   text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 0.3em;
+  gap: 0.1em;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  
-
+  width: fit-content;
 }
 .btn2 {
   background: #007fff;
@@ -1111,7 +1110,7 @@ i{
  .actions {
   margin-top: 15px;
   display: flex;
-  gap: 10px;
+  gap: 4px;
   flex-wrap: wrap;
   justify-content: center; 
   align-items: center;     
@@ -1134,7 +1133,7 @@ i{
      .actions2 {
   margin-top: 15px;
   display: flex;
-  gap: 10px;
+  gap: 4px;
   flex-wrap: wrap;
 }
 
