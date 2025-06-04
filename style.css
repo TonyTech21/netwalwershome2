@@ -1571,7 +1571,15 @@ i{
   border-radius: 8px;
   transition: background 0.2s ease;
 }
+.dropdown-container {
+  position: relative !important;
 
+}
+.nav-item.has-dropdown::after {
+  content: ' \25BC'; 
+    font-size: 0.7em;
+  margin-top: -10px;
+}
 .trigger {
   display: flex;
   gap: 1em;
@@ -1641,10 +1649,7 @@ i{
 
 
 /* Dropdown wrapper */
-.dropdown-container {
-  position: relative !important;
-  
-}
+
 
 /* Dropdown arrow */
 .nav-item.has-dropdown::after {
@@ -1689,6 +1694,10 @@ i{
     display: block;
     margin-top: 14px;
   }
+  .dropdown-container {
+  position: relative !important;
+  display: inline-block !important;
+}
 }
 
 
