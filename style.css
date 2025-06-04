@@ -647,7 +647,7 @@ small{
   .buttons{
     padding: 0.1rem;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .section-title {
   display: flex;
@@ -1270,12 +1270,14 @@ i{
 
 .website-development {
   flex: 2;
-  min-width: 300px;
+  width: fit-content;;
 }
 
 
 
-
+.webp{
+  font-size: small;
+}
 
 
 
@@ -1628,4 +1630,62 @@ i{
   color: #333;
   margin-top: 10px;
   animation: bounce 1.5s infinite;
+}
+
+
+
+
+
+/* Dropdown wrapper */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown arrow */
+.nav-item.has-dropdown::after {
+  content: ' \25BC'; /* Unicode arrow down */
+  font-size: 0.7em;
+  
+}
+
+/* Dropdown menu */
+.custom-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 9999;
+  padding: 10px 0;
+}
+
+.custom-dropdown a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s ease;
+   z-index: 9999 !important;
+}
+
+.custom-dropdown a:hover {
+  background: #f2f2f2;
+}
+
+/* Show dropdown on hover (desktop only) */
+@media (min-width: 768px) {
+  .dropdown-container:hover .custom-dropdown {
+    display: block;
+  }
+}
+
+/* Mobile-specific: force dropdown visible when toggled via JS */
+.custom-dropdown.show {
+  display: block !important;
+   z-index: 9999 !important;
 }

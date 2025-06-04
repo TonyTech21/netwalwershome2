@@ -184,3 +184,88 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+
+  document.addEventListener("DOMContentLoaded", function () {
+  // Create dropdowns
+  const servicesDropdown = document.createElement("div");
+  servicesDropdown.className = "custom-dropdown";
+  servicesDropdown.innerHTML = `
+    <a href="#">Web/App Development</a>
+    <a href="#">Digital Marketing</a>
+    <a href="#">Tech Academy</a>
+    <a href="#">Biomedical Engineering</a>
+    <a href="#">Office Supplies</a>
+  `;
+
+  const businessDropdown = document.createElement("div");
+  businessDropdown.className = "custom-dropdown";
+  businessDropdown.innerHTML = `
+    <a href="#">CliniquePlus</a>
+    <a href="#">Netwalkers Tech Academy</a>
+    <a href="#">Netwalkers Office Supplies</a>
+  `;
+
+  // Get nav items
+  const navLinks = document.getElementById("navLinks");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const navItems = navLinks.querySelectorAll(".nav-item");
+
+  navItems.forEach((item) => {
+    const text = item.textContent.trim();
+
+    if (text === "Services") {
+      item.classList.add("has-dropdown");
+      const container = document.createElement("div");
+      container.className = "dropdown-container";
+      item.parentNode.insertBefore(container, item);
+      container.appendChild(item);
+      container.appendChild(servicesDropdown.cloneNode(true));
+
+    } else if (text === "Business Units") {
+      item.classList.add("has-dropdown");
+      const container = document.createElement("div");
+      container.className = "dropdown-container";
+      item.parentNode.insertBefore(container, item);
+      container.appendChild(item);
+      container.appendChild(businessDropdown.cloneNode(true));
+    }
+  });
+
+  // Do same for mobile menu
+  const mobileItems = mobileMenu.querySelectorAll(".nav-item");
+
+  mobileItems.forEach((item) => {
+    const text = item.textContent.trim();
+
+    if (text === "Services") {
+      item.classList.add("has-dropdown");
+      const container = document.createElement("div");
+      container.className = "dropdown-container";
+      item.parentNode.insertBefore(container, item);
+      container.appendChild(item);
+
+      const clone = servicesDropdown.cloneNode(true);
+      container.appendChild(clone);
+
+      item.addEventListener("click", function (e) {
+        e.preventDefault();
+        clone.classList.toggle("show");
+      });
+
+    } else if (text === "Business Units") {
+      item.classList.add("has-dropdown");
+      const container = document.createElement("div");
+      container.className = "dropdown-container";
+      item.parentNode.insertBefore(container, item);
+      container.appendChild(item);
+
+      const clone = businessDropdown.cloneNode(true);
+      container.appendChild(clone);
+
+      item.addEventListener("click", function (e) {
+        e.preventDefault();
+        clone.classList.toggle("show");
+      });
+    }
+  });
+});
