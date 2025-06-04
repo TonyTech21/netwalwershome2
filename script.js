@@ -17,16 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             navItems.forEach(navItem => navItem.classList.remove('active'));
             item.classList.add('active');
-            if (window.innerWidth <= 900) {
-                mobileMenu.classList.remove('active');
-                menuBtn.querySelector('i').classList.add('fa-bars');
-                menuBtn.querySelector('i').classList.remove('fa-times');
-            }
+            
         });
     });
 
     renderBusinessUnits();
 });
+
 
  
 document.addEventListener("DOMContentLoaded", function () {
